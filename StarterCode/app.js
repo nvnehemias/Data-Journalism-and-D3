@@ -158,9 +158,8 @@ d3.csv("data.csv")
 
         //Step 4: Append Axes to the chart
         var yAxis = chartGroup.append("g")
-            .attr("transform",`translate(${width},0)`)
             .call(leftAxis);
-            
+
         var xAxis = chartGroup.append("g")
             .attr("transform",`translate(0,${height})`)
             .call(bottomAxis);
