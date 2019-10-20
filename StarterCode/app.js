@@ -245,7 +245,7 @@ d3.csv("data.csv")
                 chosenXAxis = value;
                 xLinearScale = xScale(data,chosenXAxis);
                 xAxis = renderXAxes(xLinearScale,xAxis);
-                return chosendXAxis,xLinearScale, xAxis;
+                return chosenXAxis,xLinearScale, xAxis;
             }
         })
 
@@ -255,15 +255,48 @@ d3.csv("data.csv")
                 chosenYAxis = value1;
                 yLinearScale = yScale(data,chosenYAxis);
                 yAxis = renderYAxes(yLinearScale,yAxis);
-                return chosendYAxis,yLinearScale,yAxis;
+                return chosenYAxis,yLinearScale,yAxis;
             }
         })
 
-        //circlesGroup = renderCircles(circlesGroup,xLinearScale,yLinearScale,chosenXAxis,chosenYAxis)
+        circlesGroup = renderCircles(circlesGroup,xLinearScale,yLinearScale,chosenXAxis,chosenYAxis)
         circlesGroup = updateToolTip(chosenXAxis,chosenYAxis,circlesGroup)
 
 
         // Perform the if statement that will change class 
+        if (chosenXAxis === "poverty") {
+            povertyLabel
+                .classed("active", true)
+                .classed("inactive", false);
+            ageLabel
+                .classed("active", false)
+                .classed("inactive", true);
+            householdlabel
+                .classed("active", false)
+                .classed("inactive", true);
+        }
+        else if (chosenXAxis === "age") {
+            povertyLabel
+                .classed("active", false)
+                .classed("inactive", true);
+            ageLabel
+                .classed("active", true)
+                .classed("inactive", false);
+            householdlabel
+                .classed("active", false)
+                .classed("inactive", true);
+        }
+        else if (chosenXAxis === "income") {
+            povertyLabel
+                .classed("active", false)
+                .classed("inactive", true);
+            ageLabel
+                .classed("active", false)
+                .classed("inactive", true);
+            householdlabel
+                .classed("active", true)
+                .classed("inactive", false);
+        }
 
         // Step 7: Create tooltip in the chart
         chartGroup.call(toolTip);
