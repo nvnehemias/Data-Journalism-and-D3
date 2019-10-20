@@ -1,4 +1,6 @@
 # D3 Homework - Data Journalism and D3
+## [Check out my website!](https://nvnehemias.github.io/Data-Journalism-and-D3/StarterCode/)
+
 
 ![Newsroom](https://media.giphy.com/media/v2xIous7mnEYg/giphy.gif)
 
